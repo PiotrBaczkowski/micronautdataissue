@@ -18,7 +18,8 @@ data class Product(
         var description: String,
         var visible: Boolean = true,
 
-        var categoryId: Long? = null,
+        @field:Relation(Relation.Kind.MANY_TO_ONE)
+        var category: List<Category>? = null,
 
         @field:Relation(Relation.Kind.ONE_TO_MANY, mappedBy = "productId")
         var productOption: List<ProductOption>? = null,
