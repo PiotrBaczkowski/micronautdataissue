@@ -22,7 +22,7 @@ data class Category(
         var visible: Boolean? = null,
 
 
-        @field:Relation(value = Relation.Kind.ONE_TO_MANY, mappedBy = "category")
+        @field:Relation(value = Relation.Kind.ONE_TO_MANY, mappedBy = "categoryId")
         @field:Nullable
         var productList: List<Product>? = null,
 

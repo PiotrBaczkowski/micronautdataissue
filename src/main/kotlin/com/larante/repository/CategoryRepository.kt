@@ -14,9 +14,7 @@ import javax.inject.Singleton
 interface CategoryRepository : CrudRepository<Category, Long> {
 
     @JoinSpecifications(
-    Join(value = "productList", alias =  "p_", type =  Join.Type.LEFT_FETCH),
-    Join(value = "productList.productOption", alias =  "op_", type =  Join.Type.LEFT_FETCH),
-    Join(value = "productList.productOption.option", alias =  "opno_", type =  Join.Type.LEFT_FETCH)
+    Join(value = "productList", alias =  "p_", type =  Join.Type.LEFT_FETCH)
     )
     override fun findAll(): List<Category>;
 }
